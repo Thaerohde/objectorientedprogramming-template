@@ -1,9 +1,11 @@
 package oop.pset1;
 
 import oop.pset1.controller.MovieDatabaseSummarizer;
-import oop.pset1.view.Summary;
+import oop.pset1.models.Film;
+import oop.pset1.models.Summary;
 import oop.pset1.view.SummaryDisplayer;
 
+import java.util.List;
 import java.util.Optional;
 
 public class Pset1Main {
