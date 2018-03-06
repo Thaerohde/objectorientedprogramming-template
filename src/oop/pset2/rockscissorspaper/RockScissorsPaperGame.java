@@ -10,8 +10,8 @@ public class RockScissorsPaperGame {
         String computerChoice = computerPlayer.playOneRound(choises);
         Judge consultation = new Judge();
         consultation.SayResult(humanChoice,computerChoice);
-
-
+        new PlayAgain();
 
     }
+
 }

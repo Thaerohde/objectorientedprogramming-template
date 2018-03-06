@@ -7,13 +7,12 @@ import java.util.stream.Stream;
 
 public class Choices {
     private List<Choice> choises;
-    protected List<Choice> Choices(){
+    public  Choices(){
         choises = Stream.of(
                 new Rock(),
                 new Paper(),
                 new Scissors()
         ).collect(Collectors.toList());
-        return choises;
     }
     public List<Choice> getChoises() {
 
@@ -21,4 +20,4 @@ public class Choices {
     }
 }
 
-}
+

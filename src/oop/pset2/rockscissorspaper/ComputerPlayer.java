@@ -1,24 +1,21 @@
 package oop.pset2.rockscissorspaper;
 
-import java.util.Scanner;
+import java.util.Collections;
+import java.util.List;
 
 public class ComputerPlayer implements Player {
     @Override
     public String playOneRound(Choices choises) {
-        new Greeting();
-        Choices choices = new Choices();
-        new ShowChoices(choices);
-        return getAChoice();
+        return String.valueOf(getComputerPlayerChoice(choises));
 
     }
 
-    private String getAChoice() {
-        Scanner scanner = new Scanner(System.in);
-        String choice  = scanner.next();
-        return choice;
-
+    private String getComputerPlayerChoice(Choices choises) {
+        List<Choice> computerChoice = choises.getChoises();
+        Collections.shuffle(computerChoice);
+        System.out.println("Computer choice is: " +computerChoice.get(0).getName());
+        return computerChoice.get(0).getName();
     }
-
 
 
 }
