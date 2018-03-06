@@ -23,7 +23,7 @@ public class MovieDatabaseSummarizer {
         List<String> most5RatedFilms =  moviesInfo.stream()
                 .sorted(Comparator.comparing(Film::getRating).reversed())
                 .limit(5)
-                .map(name->name.getName()+name.getRating())
+                .map(name->name.getName()+" ("+name.getRating()+ ")")
                 .collect(Collectors.toList());
         ActorParser actorParser = new ActorParser();
 
@@ -31,29 +31,28 @@ public class MovieDatabaseSummarizer {
 
         List<String> collect = ActorInfo.stream()
                 .collect(Collectors.groupingBy(name -> name.getName(), Collectors.counting()))
-
-                .entrySet().stream().sorted((e1,e2)->e2.getValue().compareTo(e1.getValue()))
-                .map(e->e.getKey() +" "+e.getValue())
+                .entrySet()
+                .stream()
+                .sorted((e1,e2)->e2.getValue().compareTo(e1.getValue()))
+                .map(e->e.getKey() +" ("+e.getValue()+")")
                 .limit(5)
                 .collect(Collectors.toList());
+
         List<String> genrse =  moviesInfo.stream().map(info->info.getGenre())
                 .flatMap(e->e.stream())
                 .collect(Collectors.groupingBy(e->e,Collectors.counting()))
                         .entrySet().stream()
                 .sorted((e1,e2)->e2.getValue().compareTo(e1.getValue()))
                 .limit(2)
-                .map(e->e.getKey()+ " "+e.getValue())
+                .map(e->e.getKey()+ " ("+e.getValue()+")")
                 .collect(Collectors.toList());
 
         String ratio = ActorInfo.stream().map(actor->actor.getGender())
 
                 .collect(Collectors.groupingBy(Function.identity(),Collectors.counting()))
                 .entrySet().stream()
-                .map(e->e.getKey()+" "+(e.getValue()*100)/ActorInfo.size())
+                .map(e->e.getKey()+" ("+(e.getValue()*100.00)/ActorInfo.size()+")"+ " %")
                 .collect(Collectors.joining(" "));
-
-
-
 
 
         Summary summary = new Summary();

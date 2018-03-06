@@ -23,18 +23,18 @@ public class ActorParser {
                         .map(line->line.replaceAll(":",""))
                         .map(line->line.replaceAll("'",""))
                         .map(line -> line.split(";"))
-
                         .map(columns -> columns[0])
                         .map(jsonLine -> jsonLine.split("},"))
                         .flatMap(strings -> Arrays.stream(strings))
                         .map(s -> s.split(","))
+
                         .filter(strings -> strings.length >= 5)
                         .map(s -> getActorFunction(s))
                         .collect(Collectors.toList());
                 //collect.forEach(e -> System.out.println(e.getName() + " " + e.getGender()));
 
 
-                System.out.println(collect.size());
+                //System.out.println(collect.size());
                 return collect;
 
             } catch (IOException e) {
@@ -45,8 +45,8 @@ public class ActorParser {
 
         private Actor getActorFunction(String[] strings) {
             Actor actor = new Actor();
-            actor.setName(strings[5]);
-            actor.setGender(getValue(strings[3]));
+            actor.setName(strings[5].trim());
+            actor.setGender(getValue(strings[3]).trim());
             return actor;
 
         }
