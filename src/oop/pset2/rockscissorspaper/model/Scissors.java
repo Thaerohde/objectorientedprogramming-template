@@ -1,10 +1,10 @@
-package oop.pset2.rockscissorspaper;
+package oop.pset2.rockscissorspaper.model;
 
 public class Scissors implements Choice {
 
     @Override
         public String getName(){
-            return "Scissors";
+            return "SCISSORS";
         }
     }
 

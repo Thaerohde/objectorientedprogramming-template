@@ -1,4 +1,4 @@
-package oop.pset2.rockscissorspaper;
+package oop.pset2.rockscissorspaper.model;
 
 import java.util.ArrayList;
 import java.util.List;
