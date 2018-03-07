@@ -1,13 +1,13 @@
-package oop.pset2.rockscissorspaper.controller;
+package oop.pset3.rockscissorspaperlizardspock.controller;
 
-import oop.pset2.rockscissorspaper.view.Summery;
-import oop.pset2.rockscissorspaper.model.Choice;
-import oop.pset2.rockscissorspaper.model.Choices;
-import oop.pset2.rockscissorspaper.model.Player;
-import oop.pset2.rockscissorspaper.model.Result;
-import oop.pset2.rockscissorspaper.view.ComputerPlayer;
-import oop.pset2.rockscissorspaper.view.HumanPlayer;
-import oop.pset2.rockscissorspaper.view.Judge;
+import oop.pset3.rockscissorspaperlizardspock.model.Choice;
+import oop.pset3.rockscissorspaperlizardspock.model.Choices;
+import oop.pset3.rockscissorspaperlizardspock.model.Player;
+import oop.pset3.rockscissorspaperlizardspock.model.Result;
+import oop.pset3.rockscissorspaperlizardspock.view.ComputerPlayer;
+import oop.pset3.rockscissorspaperlizardspock.view.HumanPlayer;
+import oop.pset3.rockscissorspaperlizardspock.view.Judge;
+import oop.pset3.rockscissorspaperlizardspock.view.Summery;
 
 public class RockScissorsPaperGame {
 

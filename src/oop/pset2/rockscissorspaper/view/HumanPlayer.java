@@ -7,9 +7,8 @@ import oop.pset2.rockscissorspaper.model.Player;
 import java.util.List;
 import java.util.Scanner;
 import java.util.stream.Collectors;
-import java.util.stream.Stream;
 
-public class Player1 implements Player {
+public class HumanPlayer implements Player {
 
     @Override
     public Choice playOneRound(Choices choises) {
@@ -19,10 +18,19 @@ public class Player1 implements Player {
         ShowChoices(choices);
         Scanner scanner = new Scanner(System.in);
         Choice humanChoice = getAChoice(choises);
-        System.out.println("Your choice is : " + humanChoice.getName() );
+        System.out.println("Your choice is : " + humanChoice.getName());
+
         return humanChoice;
+    }
 
-
+    @Override
+    public boolean wantToPlay() {
+        System.out.println("Do you want to play again?");
+        Scanner scanner = new Scanner(System.in);
+        String feedBack = scanner.next();
+        if ((feedBack.equalsIgnoreCase("Yes")) || (feedBack.equalsIgnoreCase("Y"))) {
+            return true;
+        } else return false;
     }
 
 
@@ -30,15 +38,30 @@ public class Player1 implements Player {
 
         Scanner scanner = new Scanner(System.in);
         String choice = scanner.next();
+        if (choises.getChoises().stream()
+                .filter(move -> move.getName().equalsIgnoreCase(choice))
 
+                .findFirst().isPresent()) {
+
+            return choises.getChoises().stream()
+                    .filter(move -> move.getName().equalsIgnoreCase(choice))
+
+                    .findFirst().get();
+        } else {
+            System.out.println("Invalid move");
+            System.exit(1);
+        }
         return choises.getChoises().stream()
                 .filter(move -> move.getName().equalsIgnoreCase(choice))
+
                 .findFirst().get();
 
     }
 
+
+
     private void ShowChoices(Choices choices) {
-        List<String> choice= choices.getChoises()
+        List<String> choice = choices.getChoises()
                 .stream()
 
                 .map(e -> e.getName())
@@ -46,8 +69,4 @@ public class Player1 implements Player {
         System.out.println(choice);
     }
 
-//    private void Greeting() {
-//        System.out.println("Hello,do you want to play?");
-//
-//    }
 }
