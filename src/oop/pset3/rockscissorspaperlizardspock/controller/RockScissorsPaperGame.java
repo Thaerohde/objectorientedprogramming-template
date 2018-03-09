@@ -7,7 +7,7 @@ import oop.pset3.rockscissorspaperlizardspock.model.Result;
 import oop.pset3.rockscissorspaperlizardspock.view.ComputerPlayer;
 import oop.pset3.rockscissorspaperlizardspock.view.HumanPlayer;
 import oop.pset3.rockscissorspaperlizardspock.view.Judge;
-import oop.pset3.rockscissorspaperlizardspock.view.Summery;
+import oop.pset3.rockscissorspaperlizardspock.view.Viewer;
 
 public class RockScissorsPaperGame {
 
@@ -26,13 +26,13 @@ public class RockScissorsPaperGame {
     }
 
     private void playRound(Player player1, Player player2) {
-        Summery summary = new Summery();
+        Viewer viewer = new Viewer();
         Choices choices = new Choices();
         Judge consultation = new Judge();
         Choice player1Choice = player1.playOneRound(choices);
         Choice player2Choice = player2.playOneRound(choices);
         Result result = consultation.getResult(player1Choice, player2Choice);
-        summary.summary(result);
+        viewer.viewer(result);
     }
 
 

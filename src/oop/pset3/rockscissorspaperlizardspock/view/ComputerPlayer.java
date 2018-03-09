@@ -18,10 +18,6 @@ public class ComputerPlayer implements Player {
     public boolean wantToPlay() {
         return true;
     }
-    @Override
-    public boolean isWin(Choice choice1, Choice choice2) {
-        return true;
-    }
 
 
     private Choice getPlayer2Choice(Choices choises) {

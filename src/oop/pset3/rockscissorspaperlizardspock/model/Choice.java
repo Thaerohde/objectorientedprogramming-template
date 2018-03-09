@@ -1,5 +1,6 @@
 package oop.pset3.rockscissorspaperlizardspock.model;
 
 public interface Choice {
-    String getName();
+    ChoiceType getName();
+    boolean isWin(Choice choice);
 }

@@ -4,5 +4,5 @@ public interface Player {
 
     Choice playOneRound(Choices choises);
     boolean wantToPlay();
-    boolean isWin(Choice Player1Choice, Choice player2Choice2);
+
 }

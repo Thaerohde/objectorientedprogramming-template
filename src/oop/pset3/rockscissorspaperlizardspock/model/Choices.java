@@ -11,7 +11,9 @@ public class Choices {
         choises = Stream.of(
                 new Rock(),
                 new Paper(),
-                new Scissors()
+                new Scissors(),
+                new Lizard(),
+                new Spock()
         ).collect(Collectors.toList());
     }
     public List<Choice> getChoises() {
