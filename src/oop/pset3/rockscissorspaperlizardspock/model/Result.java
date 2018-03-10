@@ -4,7 +4,7 @@ public class Result {
 
     private Choice choice1;
     private Choice choice2;
-    private String winner;
+    private ChoiceType winner;
 
     public Choice getChoice1() {
         return choice1;
@@ -22,11 +22,11 @@ public class Result {
         this.choice2 = choice2;
     }
 
-    public String getWinner() {
+    public ChoiceType getWinner() {
         return winner;
     }
 
-    public void setWinner(String winner) {
+    public void setWinner(ChoiceType winner) {
         this.winner = winner;
     }
 }

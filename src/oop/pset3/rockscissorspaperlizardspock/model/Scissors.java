@@ -13,20 +13,4 @@ public class Scissors implements Choice {
         return ((choice.getName().equals(ChoiceType.Lizard)||(choice.getName().equals(ChoiceType.Paper) )));
     }
 }
-   /*
-
-
-
-
-
-
-        Spock smashes Scissors
-
-
-
-
-
-
-
-        Spock vaporizes Rock
-
+  

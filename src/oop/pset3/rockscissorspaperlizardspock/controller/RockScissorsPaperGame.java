@@ -1,12 +1,7 @@
 package oop.pset3.rockscissorspaperlizardspock.controller;
 
-import oop.pset3.rockscissorspaperlizardspock.model.Choice;
-import oop.pset3.rockscissorspaperlizardspock.model.Choices;
-import oop.pset3.rockscissorspaperlizardspock.model.Player;
-import oop.pset3.rockscissorspaperlizardspock.model.Result;
-import oop.pset3.rockscissorspaperlizardspock.view.ComputerPlayer;
-import oop.pset3.rockscissorspaperlizardspock.view.HumanPlayer;
-import oop.pset3.rockscissorspaperlizardspock.view.Judge;
+import oop.pset3.rockscissorspaperlizardspock.model.*;
+import oop.pset3.rockscissorspaperlizardspock.model.Judge;
 import oop.pset3.rockscissorspaperlizardspock.view.Viewer;
 
 public class RockScissorsPaperGame {
@@ -28,11 +23,21 @@ public class RockScissorsPaperGame {
     private void playRound(Player player1, Player player2) {
         Viewer viewer = new Viewer();
         Choices choices = new Choices();
-        Judge consultation = new Judge();
+        Judge consultant = new Judge();
         Choice player1Choice = player1.playOneRound(choices);
         Choice player2Choice = player2.playOneRound(choices);
-        Result result = consultation.getResult(player1Choice, player2Choice);
-        viewer.viewer(result);
+        ChoiceType winChoice = consultant.getResult(player1Choice, player2Choice );
+
+
+        viewer.viewTheResult(getResult(player1Choice,player2Choice,winChoice));
+    }
+
+    private Result getResult(Choice player1Choice, Choice player2Choice, ChoiceType winChoice) {
+        Result result = new Result();
+        result.setChoice1(player1Choice);
+        result.setChoice2(player2Choice);
+        result.setWinner(winChoice);
+        return result;
     }
 
 
