@@ -7,7 +7,8 @@ import java.util.stream.Stream;
 
 public class Choices {
     private List<Choice> choises;
-    public  Choices(){
+
+    public Choices() {
         choises = Stream.of(
                 new Rock(),
                 new Paper(),
@@ -16,6 +17,7 @@ public class Choices {
                 new Spock()
         ).collect(Collectors.toList());
     }
+
     public List<Choice> getChoises() {
 
         return new ArrayList<>(choises);

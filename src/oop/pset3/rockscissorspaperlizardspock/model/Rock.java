@@ -10,6 +10,6 @@ public class Rock implements Choice {
 
     @Override
     public boolean isWin(Choice choice) {
-        return ((choice.getName().equals(ChoiceType.Lizard)||(choice.getName().equals(ChoiceType.Scissors) )));
+        return ((choice.getName().equals(ChoiceType.Lizard) || (choice.getName().equals(ChoiceType.Scissors))));
     }
 }

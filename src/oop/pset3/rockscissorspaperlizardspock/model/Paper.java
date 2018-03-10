@@ -2,14 +2,14 @@ package oop.pset3.rockscissorspaperlizardspock.model;
 
 public class Paper implements Choice {
 
- @Override
-        public ChoiceType getName(){
+    @Override
+    public ChoiceType getName() {
 
-     return ChoiceType.Paper;
-        }
+        return ChoiceType.Paper;
+    }
 
     @Override
     public boolean isWin(Choice choice) {
-        return ((choice.getName().equals(ChoiceType.Spock)||(choice.getName().equals(ChoiceType.Rock) )));
+        return ((choice.getName().equals(ChoiceType.Spock) || (choice.getName().equals(ChoiceType.Rock))));
     }
 }

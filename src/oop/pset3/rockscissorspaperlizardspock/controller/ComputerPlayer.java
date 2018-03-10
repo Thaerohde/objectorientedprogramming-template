@@ -21,7 +21,7 @@ public class ComputerPlayer implements Player {
     }
 
 
-    private Choice  getPlayer2Choice(Choices choises) {
+    private Choice getPlayer2Choice(Choices choises) {
         List<Choice> player2Choice = choises.getChoises();
         Collections.shuffle(player2Choice);
         Viewer viewer = new Viewer();

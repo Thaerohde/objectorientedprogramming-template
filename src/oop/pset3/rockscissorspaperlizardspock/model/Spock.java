@@ -1,6 +1,6 @@
 package oop.pset3.rockscissorspaperlizardspock.model;
 
-public class Spock implements Choice{
+public class Spock implements Choice {
     @Override
     public ChoiceType getName() {
         return ChoiceType.Spock;
@@ -8,6 +8,6 @@ public class Spock implements Choice{
 
     @Override
     public boolean isWin(Choice choice) {
-        return ((choice.getName().equals(ChoiceType.Scissors)||(choice.getName().equals(ChoiceType.Rock) )));
+        return ((choice.getName().equals(ChoiceType.Scissors) || (choice.getName().equals(ChoiceType.Rock))));
     }
 }
