@@ -7,17 +7,16 @@ import java.util.Scanner;
 import java.util.stream.Stream;
 
 public class HumanPlayer implements Player {
-    Viewer viewer = new Viewer();
 
 
     @Override
     public Choice playOneRound(Choices choises) {
 
         Choices choices = new Choices();
-        viewer.showChoices();
+        Viewer.showChoices();
 
         Choice humanChoice = getAChoice(choises);
-        viewer.viewPlayer1Choise(humanChoice);
+        Viewer.viewPlayer1Choise(humanChoice.getName());
 
         return humanChoice;
     }
@@ -25,7 +24,7 @@ public class HumanPlayer implements Player {
 
     @Override
     public boolean wantToPlay() {
-        viewer.player1WantToPlay();
+        Viewer.player1WantToPlay();
         Scanner scanner = new Scanner(System.in);
         String feedBack = scanner.next();
         if ((feedBack.equalsIgnoreCase("Yes")) || (feedBack.equalsIgnoreCase("Y"))) {
@@ -37,41 +36,15 @@ public class HumanPlayer implements Player {
     private Choice getAChoice(Choices choices) {
 
         Scanner scanner = new Scanner(System.in);
-        String choice = scanner.next();
-        if (choice.equalsIgnoreCase("rock")) {
-            return new Rock();
-        }
-        if (choice.equalsIgnoreCase("Scissors")) {
-            return new Scissors();
-        }
-        if (choice.equalsIgnoreCase("Paper")) {
-            return new Paper();
-        }
-        if (choice.equalsIgnoreCase("Lizard")) {
-            return new Lizard();
-        }
-
-        return new Spock();
+        String choice = scanner.next().toUpperCase();
+        return Stream.of(choices).flatMap(e -> e.getChoises().stream())
+                .filter(e -> choice.equalsIgnoreCase(e.getName().toString()))
+                .findFirst().get();
     }
 }
 
 
 
-
-       /* ChoiceType type = Stream.of(choices.getName())
-
-                .peek(e-> System.out.println(e))
-                .filter(move -> move.equals(choice))
-                .findFirst().get();
-
-
-        if (type != null) {
-            return type;
-        } else {
-            System.out.println("Invalid move");
-            System.exit(1);
-        }
-        return type;*/
 
 
 

@@ -12,23 +12,23 @@ public class Viewer {
         System.out.println("Player2 choice is: " + name);
     }
 
-    public void showChoices() {
+    public static void showChoices() {
         System.out.println("Hello, to play, choose from the list: Rock, Scissor, Paper, Lizard, Spock ");
     }
 
-    public void gettie() {
+    public static void gettie() {
         System.out.println("No one wins ");
     }
 
-    public void viewPlayer1Choise(Choice choice) {
-        System.out.println("Your choice is : " + choice.getName());
+    public static void viewPlayer1Choise(ChoiceType choice) {
+        System.out.println("Your choice is : " + choice);
     }
 
-    public void player1WantToPlay() {
+    public static void player1WantToPlay() {
         System.out.println("Do you want to play again?");
     }
 
-    public void viewTheResult(Result result) {
+    public static void viewTheResult(Result result) {
         System.out.println("The winner is  " + result.getWinner());
 
     }
